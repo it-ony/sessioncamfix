@@ -1,0 +1,42 @@
+{
+    "manifest_version": 2,
+    "name": "sessioncamfix",
+    "version": "0.1.0",
+    "description": "Fixes sessioncam videos for Spreadshirt",
+    "author": "Tony Findeisen",
+    "permissions": [
+        "http://*/",
+        "https://*/",
+        "activeTab",
+        "http://*/",
+        "https://*/",
+        "file://*/"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://console.sessioncam.com/Console/Recordings/PlaybackSession*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_start"
+        },
+        {
+            "matches": [
+                "https://console.sessioncam.com/Console//Recordings/LoadPageHtml*"
+            ],
+            "js": [
+                "scrollfix.js"
+            ],
+            "all_frames": true
+        }
+    ],
+    "web_accessible_resources": [
+        "playback.css",
+        "playback.js",
+        "filterfix.css"
+    ]
+}
+
+

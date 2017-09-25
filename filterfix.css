@@ -1,0 +1,7 @@
+.asset-container {
+    filter: none !important;
+}
+
+#designer > svg {
+    border: 1px solid transparent;
+}
